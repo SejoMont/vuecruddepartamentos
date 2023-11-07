@@ -18,6 +18,7 @@
           <th>Localidad</th>
           <th>Detalles</th>
           <th>Update</th>
+          <th>Borrar</th>
         </tr>
       </thead>
       <tbody>
@@ -43,6 +44,9 @@
             <router-link :to="'/update/' + dept.idDepartamento" class="nav-link">
               ✏️
             </router-link>
+          </td>
+          <td>
+            <router-link :to="'/delete/'+dept.idDepartamento" class="nav-link">🗑️</router-link>
           </td>
         </tr>
       </tbody>

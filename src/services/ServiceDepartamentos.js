@@ -18,32 +18,43 @@ export default class ServiceDepartamentos {
     return new Promise(function (resolve) {
       var request = "api/departamentos";
       var url = Global.urlApiDepartamentos + request;
-      axios.post(url, departamento).then(response => {
+      axios.post(url, departamento).then((response) => {
         resolve(response);
-      })
+      });
     });
   }
 
-  findDepartamento(id){
-    return new Promise(function(resolve){
-      var request = "api/departamentos/"+id;
+  findDepartamento(id) {
+    return new Promise(function (resolve) {
+      var request = "api/departamentos/" + id;
       var url = Global.urlApiDepartamentos + request;
       var departamento = {};
 
-      axios.get(url).then(response => {
+      axios.get(url).then((response) => {
         departamento = response.data;
-        resolve(departamento)
-      })
-    })
+        resolve(departamento);
+      });
+    });
   }
 
   updateDepartamento(departamento) {
     return new Promise(function (resolve) {
       var request = "api/departamentos";
       var url = Global.urlApiDepartamentos + request;
-      axios.put(url, departamento).then(response => {
+      axios.put(url, departamento).then((response) => {
         resolve(response);
-      })
+      });
+    });
+  }
+
+  deleteDepartamento(id) {
+    return new Promise(function (resolve) {
+      var request = "api/departamentos/" + id;
+      var url = Global.urlApiDepartamentos + request;
+
+      axios.delete(url).then((response) => {
+        resolve(response);
+      });
     });
   }
 }
